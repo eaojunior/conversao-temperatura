@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversao-temp
+  labels:
+    app: conversao-temp
+    run: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: conversao-temp
+      run: webapp
+  template:
+    metadata:
+      labels:
+        app: conversao-temp
+        run: webapp
+    spec:
+      containers:
+        - name: conversao-temp
+          image: eaojunior/conversao-temp:latest
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8080
