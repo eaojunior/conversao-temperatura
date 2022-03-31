@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: conversao-temp
+  name: conversao-temperatura
   labels:
-    app: conversao-temp
+    app: conversao-temperatura
     run: webapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: conversao-temp
+      app: conversao-temperatura
       run: webapp
   template:
     metadata:
       labels:
-        app: conversao-temp
+        app: conversao-temperatura
         run: webapp
     spec:
       containers:
-        - name: conversao-temp
-          image: eaojunior/conversao-temp:latest
+        - name: conversao-temperatura
+          image: eaojunior/conversao-temperatura:latest
           imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 8080
